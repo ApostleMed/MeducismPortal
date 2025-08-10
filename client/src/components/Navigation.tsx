@@ -18,17 +18,17 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav className="glass shadow-premium fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center space-x-3">
+            <Link href="/" className="flex-shrink-0 flex items-center space-x-3 hover-lift">
               <img 
                 src="/attached_assets/getimg_ai_img-mr9LLIdUu2DLhhqv1ZYTV_1754813070871.jpeg" 
                 alt="Meducism Logo" 
                 className="h-10 w-auto"
               />
-              <h1 className="text-2xl font-merriweather font-bold text-primary">Meducism</h1>
+              <h1 className="text-2xl font-merriweather font-bold text-gradient-primary">Meducism</h1>
             </Link>
           </div>
           
@@ -62,14 +62,14 @@ export default function Navigation() {
                 <>
                   <Button
                     onClick={() => window.location.href = '/api/login'}
-                    className="bg-primary text-white hover:bg-primary/90"
+                    className="btn-premium text-white shadow-lg hover-lift"
                   >
                     Join Movement
                   </Button>
                   <Button
                     onClick={() => window.location.href = '/api/login'}
                     variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-white"
+                    className="glass border-2 border-primary/30 text-primary hover:bg-primary/10"
                   >
                     Login
                   </Button>
