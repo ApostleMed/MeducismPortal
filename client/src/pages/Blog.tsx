@@ -70,7 +70,7 @@ export default function Blog() {
                 </div>
               ))}
             </div>
-          ) : displayPosts?.length === 0 ? (
+          ) : (displayPosts && Array.isArray(displayPosts) && displayPosts.length === 0) ? (
             <div className="text-center py-12">
               <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i className="fas fa-blog text-gray-400 text-3xl"></i>
@@ -84,7 +84,7 @@ export default function Blog() {
             </div>
           ) : (
             <div className="space-y-6">
-              {displayPosts?.map((post) => (
+              {displayPosts && Array.isArray(displayPosts) && displayPosts.map((post: any) => (
                 <BlogPost key={post.id} post={post} />
               ))}
             </div>

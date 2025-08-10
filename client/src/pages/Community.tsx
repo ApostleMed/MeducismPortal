@@ -145,7 +145,7 @@ export default function Community() {
                       </div>
                     ))}
                   </div>
-                ) : discussions?.length === 0 ? (
+                ) : (discussions && Array.isArray(discussions) && discussions.length === 0) ? (
                   <div className="text-center py-12">
                     <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
                       <i className="fas fa-comments text-gray-400 text-3xl"></i>
@@ -159,7 +159,7 @@ export default function Community() {
                   </div>
                 ) : (
                   <div className="space-y-6">
-                    {discussions?.map((discussion) => (
+                    {discussions && Array.isArray(discussions) && discussions.map((discussion: any) => (
                       <div key={discussion.id} className="border-l-4 border-primary pl-6 py-4 bg-light-grey rounded-r-lg">
                         <div className="flex items-center mb-2">
                           <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold mr-3">
@@ -258,7 +258,7 @@ export default function Community() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Discussions</span>
-                    <span className="font-bold text-secondary">{discussions?.length || 2451}</span>
+                    <span className="font-bold text-secondary">{(discussions && Array.isArray(discussions) ? discussions.length : 0) || 2451}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Resources Shared</span>

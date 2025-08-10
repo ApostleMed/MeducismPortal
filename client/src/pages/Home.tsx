@@ -4,14 +4,27 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 
 export default function Home() {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <div className="pt-16 min-h-screen bg-light-grey">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-1/3 mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="pt-16 min-h-screen bg-light-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-12">
           <h1 className="text-4xl font-merriweather font-bold text-text-primary mb-4">
-            Welcome back, {user?.firstName || 'Meducist'}!
+            Welcome back, {user && typeof user === 'object' && 'firstName' in user && user.firstName ? user.firstName : 'Meducist'}!
           </h1>
           <p className="text-xl text-gray-600">
             Continue your journey in the Meducism community

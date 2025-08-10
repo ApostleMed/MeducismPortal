@@ -88,7 +88,7 @@ export default function Resources() {
                 </div>
               ))}
             </div>
-          ) : displayResources?.length === 0 ? (
+          ) : (displayResources && Array.isArray(displayResources) && displayResources.length === 0) ? (
             <div className="text-center py-12">
               <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i className="fas fa-search text-gray-400 text-3xl"></i>
@@ -102,7 +102,7 @@ export default function Resources() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {displayResources?.map((resource) => (
+              {displayResources && Array.isArray(displayResources) && displayResources.map((resource: any) => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
             </div>

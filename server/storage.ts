@@ -25,7 +25,7 @@ import {
   type InsertContactMessage,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc, ilike, or, and } from "drizzle-orm";
+import { eq, desc, ilike, or, and, sql } from "drizzle-orm";
 
 export interface IStorage {
   // User operations (required for Replit Auth)
@@ -182,14 +182,14 @@ export class DatabaseStorage implements IStorage {
       .returning();
 
     // Update reply count
+    const [{ count }] = await db
+      .select({ count: sql<number>`count(*)` })
+      .from(discussionReplies)
+      .where(eq(discussionReplies.discussionId, reply.discussionId));
+    
     await db
       .update(discussions)
-      .set({ 
-        replies: db
-          .select({ count: db.count() })
-          .from(discussionReplies)
-          .where(eq(discussionReplies.discussionId, reply.discussionId))
-      })
+      .set({ replies: count })
       .where(eq(discussions.id, reply.discussionId));
 
     return newReply;
@@ -198,7 +198,7 @@ export class DatabaseStorage implements IStorage {
   async likeDiscussion(discussionId: string): Promise<void> {
     await db
       .update(discussions)
-      .set({ likes: db.increment(discussions.likes, 1) })
+      .set({ likes: sql`${discussions.likes} + 1` })
       .where(eq(discussions.id, discussionId));
   }
 
@@ -222,21 +222,20 @@ export class DatabaseStorage implements IStorage {
   }
 
   async searchResources(query: string, category?: string): Promise<Resource[]> {
-    const searchQuery = db
-      .select()
-      .from(resources)
-      .where(
-        or(
-          ilike(resources.title, `%${query}%`),
-          ilike(resources.description, `%${query}%`)
-        )
-      );
+    let whereCondition = or(
+      ilike(resources.title, `%${query}%`),
+      ilike(resources.description, `%${query}%`)
+    );
 
     if (category) {
-      searchQuery.where(eq(resources.category, category));
+      whereCondition = and(whereCondition, eq(resources.category, category));
     }
 
-    return await searchQuery.orderBy(desc(resources.createdAt));
+    return await db
+      .select()
+      .from(resources)
+      .where(whereCondition)
+      .orderBy(desc(resources.createdAt));
   }
 
   // Newsletter operations

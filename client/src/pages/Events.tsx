@@ -41,7 +41,7 @@ export default function Events() {
                   </div>
                 ))}
               </div>
-            ) : events?.length === 0 ? (
+            ) : (events && Array.isArray(events) && events.length === 0) ? (
               <div className="text-center py-12">
                 <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
                   <i className="fas fa-calendar text-gray-400 text-3xl"></i>
@@ -55,7 +55,7 @@ export default function Events() {
               </div>
             ) : (
               <div className="space-y-6">
-                {events?.map((event) => (
+                {events && Array.isArray(events) && events.map((event: any) => (
                   <EventCard key={event.id} event={event} />
                 ))}
               </div>

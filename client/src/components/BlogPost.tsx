@@ -28,7 +28,7 @@ export default function BlogPost({ post }: BlogPostProps) {
             {post.category}
           </span>
           <span className="text-sm text-gray-500 ml-3">
-            {new Date(post.createdAt).toLocaleDateString()}
+            {post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'No date'}
           </span>
         </div>
         <h3 className="text-xl font-merriweather font-bold mb-3">
