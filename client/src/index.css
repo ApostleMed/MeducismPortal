@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(215 13% 17%);
+  --card: hsl(208 7% 97%);
+  --card-foreground: hsl(215 13% 17%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(215 13% 17%);
+  --primary: hsl(197 61% 42%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(330 50% 49%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(210 3% 91%);
+  --muted-foreground: hsl(215 13% 17%);
+  --accent: hsl(32 95% 48%);
+  --accent-foreground: hsl(0 0% 100%);
+  --healthcare-green: hsl(122 39% 49%);
+  --healthcare-green-foreground: hsl(0 0% 100%);
+  --text-primary: hsl(215 13% 17%);
+  --light-grey: hsl(210 17% 98%);
+  --destructive: hsl(356 91% 54%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(201 30% 91%);
+  --input: hsl(200 23% 97%);
+  --ring: hsl(203 89% 53%);
+  --chart-1: hsl(203 89% 53%);
+  --chart-2: hsl(160 100% 36%);
+  --chart-3: hsl(42 93% 56%);
+  --chart-4: hsl(147 79% 42%);
+  --chart-5: hsl(341 75% 51%);
+  --sidebar: hsl(208 7% 97%);
+  --sidebar-foreground: hsl(215 13% 17%);
+  --sidebar-primary: hsl(203 89% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(212 51% 93%);
+  --sidebar-accent-foreground: hsl(203 89% 53%);
+  --sidebar-border: hsl(205 25% 91%);
+  --sidebar-ring: hsl(203 89% 53%);
+  --font-sans: 'Open Sans', sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --font-mono: 'Menlo', monospace;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(215 28% 6%);
+  --foreground: hsl(213 31% 91%);
+  --card: hsl(215 28% 8%);
+  --card-foreground: hsl(213 31% 91%);
+  --popover: hsl(215 28% 6%);
+  --popover-foreground: hsl(213 31% 91%);
+  --primary: hsl(197 61% 42%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(330 50% 49%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(215 28% 12%);
+  --muted-foreground: hsl(213 13% 65%);
+  --accent: hsl(32 95% 48%);
+  --accent-foreground: hsl(0 0% 100%);
+  --healthcare-green: hsl(122 39% 49%);
+  --healthcare-green-foreground: hsl(0 0% 100%);
+  --text-primary: hsl(213 31% 91%);
+  --light-grey: hsl(215 28% 10%);
+  --destructive: hsl(356 91% 54%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(215 28% 15%);
+  --input: hsl(215 28% 15%);
+  --ring: hsl(203 89% 53%);
+  --chart-1: hsl(203 89% 53%);
+  --chart-2: hsl(160 100% 36%);
+  --chart-3: hsl(42 93% 56%);
+  --chart-4: hsl(147 79% 42%);
+  --chart-5: hsl(341 75% 51%);
+  --sidebar: hsl(215 28% 8%);
+  --sidebar-foreground: hsl(213 31% 91%);
+  --sidebar-primary: hsl(203 89% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(215 28% 12%);
+  --sidebar-accent-foreground: hsl(203 89% 53%);
+  --sidebar-border: hsl(215 28% 15%);
+  --sidebar-ring: hsl(203 89% 53%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .font-merriweather {
+    font-family: var(--font-serif);
+  }
+  
+  .font-open-sans {
+    font-family: var(--font-sans);
+  }
+
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .text-secondary {
+    color: var(--secondary);
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .text-healthcare-green {
+    color: var(--healthcare-green);
+  }
+
+  .text-text-primary {
+    color: var(--text-primary);
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+
+  .bg-accent {
+    background-color: var(--accent);
+  }
+
+  .bg-healthcare-green {
+    background-color: var(--healthcare-green);
+  }
+
+  .bg-light-grey {
+    background-color: var(--light-grey);
+  }
+
+  .border-primary {
+    border-color: var(--primary);
+  }
+
+  .border-secondary {
+    border-color: var(--secondary);
+  }
+
+  .border-accent {
+    border-color: var(--accent);
+  }
+
+  .border-healthcare-green {
+    border-color: var(--healthcare-green);
+  }
+
+  .hover\:bg-primary\/90:hover {
+    background-color: hsl(197 61% 42% / 0.9);
+  }
+
+  .hover\:bg-secondary\/90:hover {
+    background-color: hsl(330 50% 49% / 0.9);
+  }
+
+  .hover\:bg-accent\/90:hover {
+    background-color: hsl(32 95% 48% / 0.9);
+  }
+
+  .hover\:bg-healthcare-green\/90:hover {
+    background-color: hsl(122 39% 49% / 0.9);
+  }
+}
