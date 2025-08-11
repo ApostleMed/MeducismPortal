@@ -32,28 +32,28 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Philosophy</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/about">
-                  <a className="text-gray-300 hover:text-white transition-colors">About Meducism</a>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About Meducism
                 </Link>
               </li>
               <li>
-                <Link href="/core-values">
-                  <a className="text-gray-300 hover:text-white transition-colors">Core Values</a>
+                <Link href="/core-values" className="text-gray-300 hover:text-white transition-colors">
+                  Core Values
                 </Link>
               </li>
               <li>
-                <Link href="/resources">
-                  <a className="text-gray-300 hover:text-white transition-colors">Manifesto</a>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Manifesto
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="text-gray-300 hover:text-white transition-colors">History</a>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  History
                 </Link>
               </li>
               <li>
-                <Link href="/resources">
-                  <a className="text-gray-300 hover:text-white transition-colors">Implementation</a>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Implementation
                 </Link>
               </li>
             </ul>
@@ -64,28 +64,28 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/resources">
-                  <a className="text-gray-300 hover:text-white transition-colors">Academic Papers</a>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Academic Papers
                 </Link>
               </li>
               <li>
-                <Link href="/resources">
-                  <a className="text-gray-300 hover:text-white transition-colors">Daily Practice Tools</a>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Daily Practice Tools
                 </Link>
               </li>
               <li>
-                <Link href="/resources">
-                  <a className="text-gray-300 hover:text-white transition-colors">Educational Materials</a>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Educational Materials
                 </Link>
               </li>
               <li>
-                <Link href="/resources">
-                  <a className="text-gray-300 hover:text-white transition-colors">Research Library</a>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Research Library
                 </Link>
               </li>
               <li>
-                <Link href="/resources">
-                  <a className="text-gray-300 hover:text-white transition-colors">Implementation Guides</a>
+                <Link href="/resources" className="text-gray-300 hover:text-white transition-colors">
+                  Implementation Guides
                 </Link>
               </li>
             </ul>
@@ -104,23 +104,23 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/community">
-                  <a className="text-gray-300 hover:text-white transition-colors">Discussion Forums</a>
+                <Link href="/community" className="text-gray-300 hover:text-white transition-colors">
+                  Discussion Forums
                 </Link>
               </li>
               <li>
-                <Link href="/events">
-                  <a className="text-gray-300 hover:text-white transition-colors">Events & Conferences</a>
+                <Link href="/events" className="text-gray-300 hover:text-white transition-colors">
+                  Events & Conferences
                 </Link>
               </li>
               <li>
-                <Link href="/community">
-                  <a className="text-gray-300 hover:text-white transition-colors">Global Chapters</a>
+                <Link href="/community" className="text-gray-300 hover:text-white transition-colors">
+                  Global Chapters
                 </Link>
               </li>
               <li>
-                <Link href="/community">
-                  <a className="text-gray-300 hover:text-white transition-colors">Volunteer</a>
+                <Link href="/community" className="text-gray-300 hover:text-white transition-colors">
+                  Volunteer
                 </Link>
               </li>
             </ul>
