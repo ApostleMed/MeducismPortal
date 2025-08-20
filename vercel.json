@@ -1,17 +1,12 @@
 {
-  "functions": {
-    "api/app.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/app.js"
+      "destination": "/api/app"
     },
     {
       "source": "/(.*)",
-      "destination": "/api/app.js"
+      "destination": "/api/app"
     }
   ],
   "buildCommand": "npm run build",
