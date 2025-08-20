@@ -1,37 +1,19 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "dist/index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/public/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/dist/public/assets/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/dist/index.js"
-    },
-    {
-      "src": "/(.*\\.(js|css|html|png|jpg|jpeg|gif|ico|svg|woff2?|ttf|eot|json))",
-      "dest": "/dist/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.js"
-    }
-  ],
   "functions": {
-    "dist/index.js": {
+    "api/app.js": {
       "runtime": "nodejs20.x"
     }
   },
-  "buildCommand": "npm run build"
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/app.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/app.js"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public"
 }
