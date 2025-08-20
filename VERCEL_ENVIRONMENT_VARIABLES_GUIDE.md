@@ -39,10 +39,11 @@ Do Step 3 five times for these variables:
 - `SESSION_SECRET` = `be804d73b72ea21c5520e139d0a93849c0f10ab255ca1661c5d055dc398cb8cd`
 - `ISSUER_URL` = `https://replit.com/oidc`
 
-### Step 5: Add Database URL
-1. Sign up at https://neon.tech (free PostgreSQL)
-2. Create new project → Copy connection string
-3. Add as `DATABASE_URL` variable in Vercel
+### Step 5: Add Your Database URL
+**Variable 6:**
+- Name: `DATABASE_URL`
+- Value: `postgresql://neondb_owner:npg_kAyT0z8HLGhm@ep-orange-hill-ad3plx02-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require`
+- Check all 3 environments ✅
 
 ### Step 6: Redeploy
 1. Go to **"Deployments"** tab
