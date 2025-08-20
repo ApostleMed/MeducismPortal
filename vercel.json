@@ -16,16 +16,19 @@
     },
     {
       "src": "/(.*\\.(js|css|html|png|jpg|jpeg|gif|ico|svg|woff2?|ttf|eot|json))",
-      "dest": "/dist/$1"
+      "dest": "/dist/public/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/index.html"
+      "dest": "/dist/public/index.html"
     }
   ],
   "functions": {
     "server/index.ts": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
     }
-  }
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm install"
 }
