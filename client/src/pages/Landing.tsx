@@ -21,13 +21,14 @@ export default function Landing() {
                 A moral philosophy and practical framework that treats healthcare knowledge, ethical conduct, and self-care as universal human duties—not just professional obligations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/about">
-                  <Button className="btn-premium text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-premium hover-lift">
-                    Explore Philosophy
-                  </Button>
-                </Link>
                 <Button 
-                  onClick={() => window.location.href = '/api/login'}
+                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScgt-KduIVCkOYiXtrg50MCS2DbAjkCnMLxQ02vbhbpwxwcQg/viewform?usp=dialog', '_blank')}
+                  className="btn-premium text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-premium hover-lift"
+                >
+                  Join Movement
+                </Button>
+                <Button 
+                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScgt-KduIVCkOYiXtrg50MCS2DbAjkCnMLxQ02vbhbpwxwcQg/viewform?usp=dialog', '_blank')}
                   className="glass border-2 border-white/30 text-[#0100ff] hover:bg-white/20 px-10 py-4 rounded-xl font-semibold text-lg backdrop-blur-md hover-lift"
                 >
                   Join Community
