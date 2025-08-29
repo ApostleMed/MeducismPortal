@@ -28,7 +28,7 @@ export default function Landing() {
                 </Link>
                 <Button 
                   onClick={() => window.location.href = '/api/login'}
-                  className="glass border-2 border-white/30 text-white hover:bg-white/20 px-10 py-4 rounded-xl font-semibold text-lg backdrop-blur-md hover-lift"
+                  className="glass border-2 border-white/30 text-[#0100ff] hover:bg-white/20 px-10 py-4 rounded-xl font-semibold text-lg backdrop-blur-md hover-lift"
                 >
                   Join Community
                 </Button>
