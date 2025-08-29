@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ValueCard from "@/components/ValueCard";
 
+import Gemini_Generated_Image_85qz8685qz8685qz_1_ from "@assets/Gemini_Generated_Image_85qz8685qz8685qz(1).png";
+
 export default function Landing() {
   return (
     <div className="pt-16">
@@ -35,7 +37,7 @@ export default function Landing() {
             <div className="relative animate-fade-in-right">
               <div className="absolute inset-0 gradient-gold opacity-20 rounded-2xl"></div>
               <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                src={Gemini_Generated_Image_85qz8685qz8685qz_1_} 
                 alt="Healthcare professionals collaborating" 
                 className="rounded-2xl shadow-premium w-full h-auto relative z-10"
               />
@@ -43,7 +45,6 @@ export default function Landing() {
           </div>
         </div>
       </section>
-
       {/* Philosophy Overview with Elegant Cards */}
       <section className="py-24 bg-gradient-to-b from-white to-light-grey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,7 +96,6 @@ export default function Landing() {
           </div>
         </div>
       </section>
-
       {/* Core Values Preview */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
