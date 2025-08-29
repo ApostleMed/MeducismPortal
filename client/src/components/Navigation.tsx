@@ -3,6 +3,8 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 
+import Medusim_Logo from "@assets/Medusim Logo.png";
+
 export default function Navigation() {
   const [location] = useLocation();
   const { isAuthenticated } = useAuth();
@@ -24,7 +26,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center space-x-3 hover-lift">
               <img 
-                src="/attached_assets/getimg_ai_img-mr9LLIdUu2DLhhqv1ZYTV_1754813070871.jpeg" 
+                src={Medusim_Logo} 
                 alt="Meducism Logo" 
                 className="h-10 w-auto"
               />
